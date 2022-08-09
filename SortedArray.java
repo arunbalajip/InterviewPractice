@@ -36,6 +36,7 @@ public class Solution {
                         result.add(new int[]{curr, matrix[bin[0]][bin[1]]});
                         matrix[bin[0]][bin[1]] = matrix[bin[0]][bin[1]] * -1;
                         matrix[row][col] = matrix[row][col] * -1;
+                        break;
                     }
                 }
             }
@@ -49,7 +50,7 @@ public class Solution {
             return null;
           int remElem = matrix[bin[0]][bin[1]];
           if(Math.abs(remElem) == rem){
-              int [][] direction = new int[][] { {0, -1}, {0, 1}};
+              int [][] direction = new int[][] { {0, -1}};
               for(int[] dir: direction){
                   int newRow = bin[0];
                   int newCol = bin[1] + dir[1];
@@ -57,7 +58,7 @@ public class Solution {
                         if(matrix[newRow][newCol] == rem)
                             return new int[]{newRow, newCol};
               }
-              if(remElem == rem)
+              if(remElem > 0)
                 return bin;
           }
           return null;
@@ -82,7 +83,7 @@ public class Solution {
 
  public static void main(String[] args) {
         int matrix[][] = { { 1, 2, 6, 7 },
-                         { 2, 5, 8,  8},
+                         { 3, 5, 8,  8},
                          { 4, 7, 9, 11  } };
             
            
