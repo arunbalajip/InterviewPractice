@@ -1,5 +1,5 @@
+https://www.hackerrank.com/contests/coderadon/challenges/alien-numbers
 
-// Online IDE - Code Editor, Compiler, Interpreter
 import java.util.*;
  class pair{
      String value;
