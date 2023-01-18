@@ -1,0 +1,45 @@
+import java.io.*;
+import java.util.*;
+/*
+given a string, reverse only the digits within the string (0-9)
+  
+  
+  example:
+input:    ab1c23d4
+output:   ab4c32d1
+*/
+time O(n)
+space O(n) 
+public String reverseDigitString(String input){
+  check(input==null, "input should not be null");
+  char[] inputArray = input.toCharArray();
+  int start = 0;
+  int end = input.length()-1;
+  while(start<end){
+    if(!isDigit(inputArray[start])){
+      start++;
+    }
+    if(!isDigit(inputArray[end])){
+      end--;
+    }
+    if(isDigit(inputArray[start]) && isDigit(inputArray[end])){
+      swap(inputArray,start, end);
+      start++;
+      end--;
+    }
+  }
+  return inputArray.toString();
+}
+
+private boolean isDigit(char inputChar){
+  if(inputChar >= '0' && inputChar <= '9'){
+    return true;
+  return false;
+}
+  
+private void swap(Char[] inputArray, int start, int end){
+  char temp = inputArray[start];
+  inputArray[start] = inputArray[end];
+  inputArray[end] = temp;
+}
+}
